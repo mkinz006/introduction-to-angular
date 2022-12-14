@@ -3,4 +3,5 @@
 <button (click)="searchHousingLocations(search.value)">Search</button>
 <article *ngFor="let location of results">
     <p>{{location.name}}</p>
+    <button (click)="selectHousingLocation(location)">View</button>
 </article>
