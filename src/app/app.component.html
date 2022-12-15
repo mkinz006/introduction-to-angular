@@ -6,10 +6,14 @@
         <app-housing-list [locationList]="housingLocationList" (selectedLocationEvent)="updateSelectedLocation($event)"></app-housing-list>
     </section>
     <article>
+        <ng-container *ngIf="selectedLocation">
         <img [src]="selectedLocation?.photo">
         <p>{{selectedLocation?.name}}</p>
         <p>{{selectedLocation?.availableUnits}}</p>
         <p>{{selectedLocation?.city}}, {{selectedLocation?.state}}</p>
-
+        <p>{{selectedLocation?.laundry ?  "Has Laundry" : "Does not have Laundry"}}</p>
+        <p>{{selectedLocation?.wifi ? "Has WiFi" : "Does Not have Wifi"}}</p>
+        </ng-container>
+        
     </article>
 </main>
